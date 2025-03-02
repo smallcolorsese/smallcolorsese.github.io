@@ -151,7 +151,7 @@
 </br>
 
 <ol start="2">
-<li>初始化hexo，这一步看一下你想在哪个位置创建hexo，hexo初始化后会在你当前路径下生成一个文件夹，我这里的文件夹叫 blog （必须保证初始化位置和node和git在同一个文件夹下）</li>
+<li>初始化hexo，这一步看一下你想在哪个位置创建hexo，hexo初始化后会在你当前路径下生成一个文件夹，这就是hexo的根目录，我这里的文件夹叫 blog （必须保证初始化位置和node和git在同一个文件夹下）</li>
 </ol>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;blog&gt; #初始化，blog为任意一个你想要的文件夹名称</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -181,6 +181,19 @@
 <ol>
 <li>打开cmd窗口，执行如下命令：</li>
 </ol>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
+<p> yourname为你github用户名，youremail为你github的邮箱。<br> 如果输错可以检查<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure><br> </br></p>
+<p> 2.绑定密钥<br> 生成本地密钥，在cmd中输入：<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;</span><br></pre></td></tr></table></figure><br> 疯狂敲回车，最后会显示下图，就代表你的密钥生成成功<br> <img src="https://github.com/smallcolorsese/image/blob/main/ssh.png?raw=true"><br> 接着我们就会发现在我们的user目录下多了一个.ssh目录，打开后有一个公钥，一个私钥。id_rsa.pub是公钥，我们需要打开它，复制里面的全部内容。</p>
+<p> 然后进入github，点击setting，找到左边的SSH and GPG keys，点击右上的New SSH key，将刚刚的密钥复制进去保存，随便起个title就行。<br> <img src="https://github.com/smallcolorsese/image/blob/main/setting.png?raw=true"><br> <img src="https://github.com/smallcolorsese/image/blob/main/ssh_setting.png?raw=true"><br> </br></p>
+<p> 3.进行部署</p>
+<blockquote>
+<p>将你本地的hexo和你的github关联起来<br> 复制你的github库连接<br> <img src="https://github.com/smallcolorsese/image/blob/main/git_link.png?raw=true"></p>
+</blockquote>
+<p> 打开hexo根目录，找到_config.yml文件，打开翻到最后，找到<strong>deploy</strong>那一项，改为下列样式<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: 刚刚复制的链接</span><br><span class="line">    branch: main</span><br></pre></td></tr></table></figure></p>
+<p> 安装deploy-git ，也就是部署的命令,这样你才能用命令部署到GitHub。<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
+<p> 然后以此执行以下命令<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo c   #清除缓存文件 db.json 和已生成的静态文件 public</span><br><span class="line">hexo g       #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)</span><br><span class="line">hexo d       #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span><br></pre></td></tr></table></figure><br> 最后会显示<br> <img src="https://github.com/smallcolorsese/image/blob/main/git_success.png?raw=true"></p>
+<p> <strong>查看自己的github仓库，如果有内容则代表上传成功</strong></p>
+<p> 最后在网页上输入”username”.github.io访问你的博客吧！</p>
 </li>
 </ol>
 
