@@ -22,7 +22,7 @@
 
   
 
-  <title>创建博客入门 | 芝士博客</title>
+  <title>创建博客入门第二篇 | 芝士博客</title>
 
   
 
@@ -97,17 +97,12 @@
     <div class="header-content">
       <div class="post-text layout-block">
         <div class="layout-margin">
-          <h1 class="title-wrap">创建博客入门</h1>
+          <h1 class="title-wrap">创建博客入门第二篇</h1>
           <h2 class="title-sub-wrap">
             <strong>Haoran</strong>
             <span>发布于</span>
-            <time  class="article-date" datetime="2025-02-25T18:58:04.000Z" itemprop="datePublished">2025-02-25</time>
+            <time  class="article-date" datetime="2025-03-02T00:43:06.000Z" itemprop="datePublished">2025-03-01</time>
           </h2>
-          
-            <h2 class="last-time">
-              <span>最后更新于</span>
-              <time  class="article-updated" datetime="2025-03-01T20:42:20.439Z" itemprop="dateUpdated">2025-03-01</time>
-            </h2>
           
           
           <ul class="wrap-list dark">
@@ -139,24 +134,62 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="如何创建文章"><a href="#如何创建文章" class="headerlink" title="如何创建文章"></a>如何创建文章</h1><p>打开cmd, 进入hexo-post目录下，输入</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post [博客名称]</span><br></pre></td></tr></table></figure>
-<p>此时在hexo-blog\source_post目录下则会出现所创建的md后缀文件</p>
-<p><img src="https://github.com/smallcolorsese/image/raw/main/%E6%96%87%E4%BB%B6%E4%BD%8D%E7%BD%AE.png"></p>
-<br/>
-
+        <h1 id="写在开头"><a href="#写在开头" class="headerlink" title="写在开头"></a>写在开头</h1><p>这篇博客用来补充前篇，把hexo部署到本地以及上传到github的步骤和踩的一些坑开一篇讲一下。也害怕自己忘了（谁知道会不会哪天自己删库重来结果建不起来了）。<br>言归正传，现在来讲一下。</p>
+<h1 id="本地部分"><a href="#本地部分" class="headerlink" title="本地部分"></a>本地部分</h1><h2 id="前置要求"><a href="#前置要求" class="headerlink" title="前置要求"></a>前置要求</h2><p>保证你的电脑里已经下载了 <a target="_blank" rel="noopener" href="https://git-scm.com/downloads">git</a> 以及  <a target="_blank" rel="noopener" href="https://nodejs.org/en/download">Node.js</a></p>
 <blockquote>
-<p>注意此处我使用的是将文件上传到github获取图片url，如果直接复制图片网页链接，图片无法正常显示<br>github与md关联图片，需要固定格式，其格式为<code>https://github.com/用户名/repository仓库名/raw/分支名master/图片文件夹名称/.png</code></p>
+<p>这里的第一个坑就是一定要注意Node.js的版本问题,推荐使用16或18版本的，我这里用的是18版本的（为什么有最新版本不用呢？亲测新版本有各种bug，最严重的问题就是没办法把你的博客push到github或你的服务器上）</p>
 </blockquote>
-<p>进入所创建的markdown文件，即md后缀文件，就可以开写啦！</p>
-<p><img src="https://github.com/smallcolorsese/image/raw/main/%E5%8D%9A%E5%AE%A2%E7%BC%96%E8%BE%91.png"></p>
-<p>hexo是支持Markdown语法，附一个<a href = "https://www.markdown.xyz/basic-syntax/" target = "_blank">markdown语法教学链接</a></p>
+<p><img src="https://github.com/smallcolorsese/image/blob/main/nodejs.jpg?raw=true"></p>
+<p>安装后进入cmd输入,</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git version</span><br><span class="line">node version</span><br></pre></td></tr></table></figure>
+<p>如果正常显示版本号，证明前置要求你已经完成了！</p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>保持在cmd的界面</p>
+<ol>
+<li>下载hexo的包</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+</br>
+
+<ol start="2">
+<li>初始化hexo，这一步看一下你想在哪个位置创建hexo，hexo初始化后会在你当前路径下生成一个文件夹，我这里的文件夹叫 blog （必须保证初始化位置和node和git在同一个文件夹下）</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init &lt;blog&gt; #初始化，blog为任意一个你想要的文件夹名称</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>新建完成后，指定文件夹目录下有：<br>node_modules: 依赖包<br>public：存放生成的页面<br>scaffolds：生成文章的一些模板<br>source：用来存放你的文章<br>themes：主题<br>_config.yml: 博客的配置文件</p>
+</blockquote>
+<ol start="3">
+<li>测试hexo是否安装成功，输入</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &lt;blog&gt; #以后所有有关hexo的指令都需要在blog文件夹中执行</span><br><span class="line">hexo s #本地启动hexo</span><br></pre></td></tr></table></figure>
+</br>
+
+<p>打开下面的链接<br><img src="https://github.com/smallcolorsese/image/blob/main/hexo_s.png?raw=true"><br></br></p>
+<p>出现下图的界面则为成功<br><img src="https://github.com/smallcolorsese/image/blob/main/localhost.png?raw=true"><br></br><br>这是最初始的界面，下面我们来把他部署到github上</p>
+<ol start="4">
+<li>如果想换一个好看的主题（肯定会换），进入<a target="_blank" rel="noopener" href="https://hexo.io/themes/">hexo themes</a>界面，选一个好看的按照教程安装就行，这里就不过多赘述。</li>
+</ol>
+<h1 id="云端部分"><a href="#云端部分" class="headerlink" title="云端部分"></a>云端部分</h1><h2 id="将hexo部署到Github上"><a href="#将hexo部署到Github上" class="headerlink" title="将hexo部署到Github上"></a>将hexo部署到Github上</h2><ol>
+<li><p>创建一个存放hexo文件的github仓库</p>
+<blockquote>
+<p>首先需要有一个github账号。登上账号后，点击最上面的+号，选择new repository, 仓库名为xxxx.github.io(xxxx为你的github用户名)，这有这样下面要部署到github上时才会被识别。<br><img src="/"><br></br></p>
+</blockquote>
+</li>
+<li><p>修改git配置文件</p>
+<blockquote>
+<p>设置上传免密登录</p>
+</blockquote>
+<ol>
+<li>打开cmd窗口，执行如下命令：</li>
+</ol>
+</li>
+</ol>
 
       </section>
 
       
       
         <nav class="article-nav">
+          
           
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
@@ -165,25 +198,8 @@
     
     <div class="card-text">
       
-        <a href="/2025/03/01/rookie-2/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">创建博客入门第二篇</h2>
-        </a>
-      
-      <div class="card-text--row">Newer</div>
-    </div>
-  </article>
-</div>
-          
-          
-            <div class="article-nav-item layout-padding">
-  <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
-    
-      <div class="card-cover" background-image-lazy data-img="https://github.com/smallcolorsese/image/blob/main/www.hacg.me_51.jpg?raw=true"></div>
-    
-    <div class="card-text">
-      
-        <a href="/2025/02/25/test/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">test</h2>
+        <a href="/2025/02/25/rookie/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">创建博客入门</h2>
         </a>
       
       <div class="card-text--row">Older</div>
