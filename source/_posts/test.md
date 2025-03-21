@@ -2,7 +2,7 @@
 title: test
 date: 2025-02-25 13:33:37
 tags:
-cover: /image/www.hacg.me_51.jpg
+cover: /image/www.hacg.me_51.webp
 ---
 
 # 一级标题

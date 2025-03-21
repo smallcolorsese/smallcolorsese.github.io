@@ -2,7 +2,7 @@
 title: 创建博客入门第二篇
 date: 2025-03-01 19:43:06
 tags: 博客入门
-cover: /image/acg.gy_17.jpg
+cover: /image/acg.gy_17.webp
 ---
 
 # 写在开头
@@ -15,7 +15,7 @@ cover: /image/acg.gy_17.jpg
 保证你的电脑里已经下载了 [git](https://git-scm.com/downloads) 以及  [Node.js](https://nodejs.org/en/download)
 >这里的第一个坑就是一定要注意Node.js的版本问题,推荐使用16或18版本的，我这里用的是18版本的（为什么有最新版本不用呢？亲测新版本有各种bug，最严重的问题就是没办法把你的博客push到github或你的服务器上）
 
-![](/image/rookie_2/nodejs.jpg)
+![](/image/rookie_2/nodejs.webp)
 
 安装后进入cmd输入,
 ```
@@ -52,11 +52,11 @@ hexo s #本地启动hexo
 </br>
 
 打开下面的链接
-![](/image/rookie_2/hexo_s.png)
+![](/image/rookie_2/hexo_s.webp)
 </br>
 
 出现下图的界面则为成功
-![](/image/rookie_2/localhost.png)
+![](/image/rookie_2/localhost.webp)
 </br>
 这是最初始的界面，下面我们来把他部署到github上
 
@@ -68,8 +68,8 @@ hexo s #本地启动hexo
 1. 创建一个存放hexo文件的github仓库
 >首先需要有一个github账号。登上账号后，点击最上面的+号，选择new repository, 仓库名为xxxx.github.io(xxxx为你的github用户名)，这有这样下面要部署到github上时才会被识别。
 
-![](/image/rookie_2/new_repository.png)
-![](/image/rookie_2/new_repository2.png)
+![](/image/rookie_2/new_repository.webp)
+![](/image/rookie_2/new_repository2.webp)
 </br>
 
 2. 修改git配置文件
@@ -94,12 +94,12 @@ hexo s #本地启动hexo
     ssh-keygen -t rsa -C "youremail"
     ```
     疯狂敲回车，最后会显示下图，就代表你的密钥生成成功
-    ![](/image/rookie_2/ssh.png)
+    ![](/image/rookie_2/ssh.webp)
     接着我们就会发现在我们的user目录下多了一个.ssh目录，打开后有一个公钥，一个私钥。id_rsa.pub是公钥，我们需要打开它，复制里面的全部内容。
 
     然后进入github，点击setting，找到左边的SSH and GPG keys，点击右上的New SSH key，将刚刚的密钥复制进去保存，随便起个title就行。
-    ![](/image/rookie_2/setting.png)
-    ![](/image/rookie_2/ssh_setting.png)
+    ![](/image/rookie_2/setting.webp)
+    ![](/image/rookie_2/ssh_setting.webp)
     </br>
 
     3.进行部署
@@ -107,7 +107,7 @@ hexo s #本地启动hexo
     >将你本地的hexo和你的github关联起来
     复制你的github库连接
 
-    ![](/image/rookie_2/git_link.png)
+    ![](/image/rookie_2/git_link.webp)
 
     打开hexo根目录，找到_config.yml文件，打开翻到最后，找到**deploy**那一项，改为下列样式
     ```
@@ -129,7 +129,7 @@ hexo s #本地启动hexo
     hexo d       #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)
     ```
     最后会显示
-    ![](/image/rookie_2/git_success.png)
+    ![](/image/rookie_2/git_success.webp)
 
     **查看自己的github仓库，如果有内容则代表上传成功**
 

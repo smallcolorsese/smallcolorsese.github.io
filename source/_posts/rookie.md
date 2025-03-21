@@ -2,7 +2,7 @@
 title: 创建博客入门
 date: 2025-02-25 13:58:04
 tags: 博客入门
-cover: /image/www.hacg.me_55.jpg
+cover: /image/www.hacg.me_55.webp
 ---
 
 # 如何创建文章
@@ -12,7 +12,7 @@ hexo new post [博客名称]
 ```
 此时在hexo-blog\source\_post目录下则会出现所创建的md后缀文件
 
-![](/image/rookie/博客编辑.png)
+![](/image/rookie/博客编辑.webp)
 
 <br/>
 
@@ -21,6 +21,6 @@ github与md关联图片，需要固定格式，其格式为```https://github.com
 
 进入所创建的markdown文件，即md后缀文件，就可以开写啦！
 
-![](/image/rookie/文件位置.png)
+![](/image/rookie/文件位置.webp)
 
 hexo是支持Markdown语法，附一个<a href = "https://www.markdown.xyz/basic-syntax/" target = "_blank">markdown语法教学链接</a>
