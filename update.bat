@@ -41,9 +41,8 @@ echo 拉取完成！
 goto MENU
 
 :END
-echo .
+timeout /t 1 >nul
 for /l %%i in (3, -1, 1) do (
-	cls
 	echo 程序将在%%i秒后退出...
 	timeout /t 1 >nul
 )
