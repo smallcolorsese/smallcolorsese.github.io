@@ -2,7 +2,7 @@
 title: 如何将github page同步部署到服务器上
 date: 2025-03-03 14:05:53
 tags: 博客入门
-cover: 
+cover: /image/rookie_3/acg.gy_43.jpg
 ---
 
 # 前言

@@ -1,8 +1,8 @@
 ---
-title: lab_note1
+title: 学习笔记lab1
 date: 2025-03-11 18:14:57
 tags: 学习笔记
-cover:
+cover: /image/lab_note/acg.gy_27.jpg
 ---
 
 # 这篇主要是放一些平常学习中感觉值得记下来的知识点
