@@ -46,7 +46,7 @@
 <!-- header container -->
 <header class="header-container post">
   
-    <div class="post-image" style="background-image: url(/image/acg.gy_17.jpg)"></div>
+    <div class="post-image" style="background-image: url(/image/acg.gy_17.webp)"></div>
   
 
   <!-- navbar -->
@@ -106,7 +106,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2025-03-03T02:34:18.194Z" itemprop="dateUpdated">2025-03-02</time>
+              <time  class="article-updated" datetime="2025-03-21T01:43:33.928Z" itemprop="dateUpdated">2025-03-20</time>
             </h2>
           
           
@@ -144,7 +144,7 @@
 <blockquote>
 <p>这里的第一个坑就是一定要注意Node.js的版本问题,推荐使用16或18版本的，我这里用的是18版本的（为什么有最新版本不用呢？亲测新版本有各种bug，最严重的问题就是没办法把你的博客push到github或你的服务器上）</p>
 </blockquote>
-<p><img src="/image/rookie_2/nodejs.jpg"></p>
+<p><img src="/image/rookie_2/nodejs.webp"></p>
 <p>安装后进入cmd输入,</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git version</span><br><span class="line">node version</span><br></pre></td></tr></table></figure>
 <p>如果正常显示版本号，证明前置要求你已经完成了！</p>
@@ -168,8 +168,8 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd &lt;blog&gt; #以后所有有关hexo的指令都需要在blog文件夹中执行</span><br><span class="line">hexo s #本地启动hexo</span><br></pre></td></tr></table></figure>
 </br>
 
-<p>打开下面的链接<br><img src="/image/rookie_2/hexo_s.png"><br></br></p>
-<p>出现下图的界面则为成功<br><img src="/image/rookie_2/localhost.png"><br></br><br>这是最初始的界面，下面我们来把他部署到github上</p>
+<p>打开下面的链接<br><img src="/image/rookie_2/hexo_s.webp"><br></br></p>
+<p>出现下图的界面则为成功<br><img src="/image/rookie_2/localhost.webp"><br></br><br>这是最初始的界面，下面我们来把他部署到github上</p>
 <ol start="4">
 <li>如果想换一个好看的主题（肯定会换），进入<a target="_blank" rel="noopener" href="https://hexo.io/themes/">hexo themes</a>界面，选一个好看的按照教程安装就行，这里就不过多赘述。</li>
 </ol>
@@ -179,7 +179,7 @@
 </blockquote>
 </li>
 </ol>
-<p><img src="/image/rookie_2/new_repository.png"><br><img src="/image/rookie_2/new_repository2.png"><br></br></p>
+<p><img src="/image/rookie_2/new_repository.webp"><br><img src="/image/rookie_2/new_repository2.webp"><br></br></p>
 <ol start="2">
 <li><p>修改git配置文件</p>
 <blockquote>
@@ -190,16 +190,16 @@
 </ol>
  <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;</span><br><span class="line">git config --global user.email &quot;youremail&quot;</span><br></pre></td></tr></table></figure>
 <p> yourname为你github用户名，youremail为你github的邮箱。<br> 如果输错可以检查<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure><br> </br></p>
-<p> 2.绑定密钥<br> 生成本地密钥，在cmd中输入：<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;</span><br></pre></td></tr></table></figure><br> 疯狂敲回车，最后会显示下图，就代表你的密钥生成成功<br> <img src="/image/rookie_2/ssh.png"><br> 接着我们就会发现在我们的user目录下多了一个.ssh目录，打开后有一个公钥，一个私钥。id_rsa.pub是公钥，我们需要打开它，复制里面的全部内容。</p>
-<p> 然后进入github，点击setting，找到左边的SSH and GPG keys，点击右上的New SSH key，将刚刚的密钥复制进去保存，随便起个title就行。<br> <img src="/image/rookie_2/setting.png"><br> <img src="/image/rookie_2/ssh_setting.png"><br> </br></p>
+<p> 2.绑定密钥<br> 生成本地密钥，在cmd中输入：<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;</span><br></pre></td></tr></table></figure><br> 疯狂敲回车，最后会显示下图，就代表你的密钥生成成功<br> <img src="/image/rookie_2/ssh.webp"><br> 接着我们就会发现在我们的user目录下多了一个.ssh目录，打开后有一个公钥，一个私钥。id_rsa.pub是公钥，我们需要打开它，复制里面的全部内容。</p>
+<p> 然后进入github，点击setting，找到左边的SSH and GPG keys，点击右上的New SSH key，将刚刚的密钥复制进去保存，随便起个title就行。<br> <img src="/image/rookie_2/setting.webp"><br> <img src="/image/rookie_2/ssh_setting.webp"><br> </br></p>
 <p> 3.进行部署</p>
 <blockquote>
 <p>将你本地的hexo和你的github关联起来<br> 复制你的github库连接</p>
 </blockquote>
-<p> <img src="/image/rookie_2/git_link.png"></p>
+<p> <img src="/image/rookie_2/git_link.webp"></p>
 <p> 打开hexo根目录，找到_config.yml文件，打开翻到最后，找到<strong>deploy</strong>那一项，改为下列样式<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">    type: git</span><br><span class="line">    repo: 刚刚复制的链接</span><br><span class="line">    branch: main</span><br></pre></td></tr></table></figure></p>
 <p> 安装deploy-git ，也就是部署的命令,这样你才能用命令部署到GitHub。<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></p>
-<p> 然后以此执行以下命令<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo c   #清除缓存文件 db.json 和已生成的静态文件 public</span><br><span class="line">hexo g       #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)</span><br><span class="line">hexo d       #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span><br></pre></td></tr></table></figure><br> 最后会显示<br> <img src="/image/rookie_2/git_success.png"></p>
+<p> 然后以此执行以下命令<br> <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo c   #清除缓存文件 db.json 和已生成的静态文件 public</span><br><span class="line">hexo g       #生成网站静态文件到默认设置的 public 文件夹(hexo generate 的缩写)</span><br><span class="line">hexo d       #自动生成网站静态文件，并部署到设定的仓库(hexo deploy 的缩写)</span><br></pre></td></tr></table></figure><br> 最后会显示<br> <img src="/image/rookie_2/git_success.webp"></p>
 <p> <strong>查看自己的github仓库，如果有内容则代表上传成功</strong></p>
 <p> 最后在网页上输入”username”.github.io访问你的博客吧！</p>
 </li>
@@ -214,7 +214,7 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="/image/rookie_3/acg.gy_43.jpg"></div>
+      <div class="card-cover" background-image-lazy data-img="/image/rookie_3/acg.gy_43.webp"></div>
     
     <div class="card-text">
       
@@ -231,7 +231,7 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="/image/www.hacg.me_55.jpg"></div>
+      <div class="card-cover" background-image-lazy data-img="/image/www.hacg.me_55.webp"></div>
     
     <div class="card-text">
       
