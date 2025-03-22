@@ -16,4 +16,5 @@ bat是windows下的批处理文件格式，使用它可以方便的帮助我们�
 | :--- | :--- |
 |@echo off|不显示命令行以及当前命令行|
 |call :update|调用隐函数update|
+|echo hello|显示hello|
 
