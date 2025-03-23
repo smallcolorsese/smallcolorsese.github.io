@@ -2,7 +2,7 @@
 menu:
   首页: /
   归档: /archives
-  分类: /tags
+  #分类: /tags
   关于: /*
 
 # 主页banner图
@@ -99,7 +99,7 @@ favicon: /favicon.ico
 social_icon:
   enable: true
   icons:
-    ins     :
+    ins     : https://www.instagram.com/ranwhole/
     zhihu   :
     weibo   : 
     github  : https://github.com/smallcolorsese
