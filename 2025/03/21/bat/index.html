@@ -73,8 +73,6 @@
         
           <li class="navbar-list-item"><a href="/archives">归档</a></li>
         
-          <li class="navbar-list-item"><a href="/tags">分类</a></li>
-        
           <li class="navbar-list-item"><a href="/*">关于</a></li>
         
       </ul>
@@ -108,7 +106,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2025-03-22T20:32:28.579Z" itemprop="dateUpdated">2025-03-22</time>
+              <time  class="article-updated" datetime="2025-03-23T00:10:16.324Z" itemprop="dateUpdated">2025-03-22</time>
             </h2>
           
           
@@ -147,16 +145,12 @@
 <thead>
 <tr>
 <th align="left">参数</th>
-<th align="left">解释</th>
+<th align="left">语法解释</th>
 </tr>
 </thead>
 <tbody><tr>
 <td align="left">@echo off</td>
 <td align="left">不显示命令行以及当前命令行</td>
-</tr>
-<tr>
-<td align="left">call :update</td>
-<td align="left">调用隐函数update</td>
 </tr>
 <tr>
 <td align="left">echo hello</td>
@@ -168,14 +162,54 @@
 </tr>
 <tr>
 <td align="left">rem</td>
-<td align="left">注释，也可以用::代替</td>
+<td align="left">注释，也可以用::或%代替</td>
 </tr>
 <tr>
 <td align="left">cd aaa</td>
 <td align="left">进入aaa目录</td>
 </tr>
 </tbody></table>
-<h1 id="特殊一点的命令"><a href="#特殊一点的命令" class="headerlink" title="特殊一点的命令"></a>特殊一点的命令</h1>
+<h1 id="特殊一点的命令"><a href="#特殊一点的命令" class="headerlink" title="特殊一点的命令"></a>特殊一点的命令</h1><p>现在来讲一些bat文件中比较高级的命令，如果你学会了，那你就是就是小孩堆里的king了！这些命令主要有以下几个，我们依次讲解一下</p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">语法解释</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">if</td>
+<td align="left">IF [NOT] string1&#x3D;&#x3D;string2 command </br> IF [NOT] ERRORLEVEL number command </br> IF [NOT] EXIST filename command</td>
+</tr>
+<tr>
+<td align="left">goto</td>
+<td align="left">goto Lable 会跳转到Lable标签</td>
+</tr>
+<tr>
+<td align="left">call</td>
+<td align="left">调用其他bat文件或者调用标签</td>
+</tr>
+<tr>
+<td align="left">choice</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">for</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left">set</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h2 id="if-else命令"><a href="#if-else命令" class="headerlink" title="if-else命令"></a>if-else命令</h2><p>if-else是条件判断语句用来判断条件是否符合，然后执行相对应的语句，主要有三种使用情况：</p>
+<ol>
+<li>if [not] “参数” &#x3D;&#x3D; “字符串” 待执行的命令，只要相等，则运行命令，否则依次运行下面的else语句，如果没有else语句就会跳出此if判断语句，继续向下运行。</li>
+</ol>
+<p>例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@echo off</span><br><span class="line">chcp 65001&gt;nul &amp; :: 强制命令指示符使用utf-8编码，不然中文会乱码</span><br><span class="line"></span><br><span class="line">set /p pwd=请输入密码: &amp; :: 将用户输入的密码赋值到pwd</span><br><span class="line"></span><br><span class="line">if &quot;%pwd%&quot; == &quot;123&quot; (</span><br><span class="line">    echo 密码正确</span><br><span class="line">    pause % 防止输出后闪退 %</span><br><span class="line">) else (  </span><br><span class="line">    % 注意else和(之间有空格 %</span><br><span class="line">    echo 密码错误</span><br><span class="line">    pause</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<p><a href="/download/bat/if_pwd.bat">下载示例</a></p>
+<h2 id="goto"><a href="#goto" class="headerlink" title="goto"></a>goto</h2>
       </section>
 
       
@@ -185,12 +219,12 @@
             <div class="article-nav-item layout-padding">
   <article class="card-container article-nav-card content-padding--primary soft-size--large soft-style--box">
     
-      <div class="card-cover" background-image-lazy data-img="/image/blog_useful_plug/hacg.me_62.webp"></div>
+      <div class="card-cover" background-image-lazy data-img="/image/niu.jpg"></div>
     
     <div class="card-text">
       
-        <a href="/2025/03/22/blog-useful-plug/" itemprop="url">
-          <h2 class="card-text--title text-ellipsis">博客有用的插件</h2>
+        <a href="/2025/03/23/niumo/" itemprop="url">
+          <h2 class="card-text--title text-ellipsis">牛魔</h2>
         </a>
       
       <div class="card-text--row">Newer</div>
@@ -261,7 +295,7 @@
         <svg class="icon icon-tags" viewBox="0 0 1098 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
   <path d="M283.42180005 272q0-28.38857157-20.09142843-48.48000001t-48.47999998-20.09142842-48.48000002 20.09142842-20.09142846 48.48000001 20.09142846 48.48 48.48000002 20.09142843 48.47999998-20.09142843 20.09142843-48.48zM855.0332285 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.03999997 263.58857157q-20.9142853 19.81714313-48.75428534 19.81714312-28.38857157 0-48.20571468-19.81714312l-383.04-383.58857157q-20.36571468-19.81714313-34.55999999-54.10285688t-14.19428534-62.6742853l0-222.85714313q0-27.84000002 20.36571469-48.20571469t48.2057147-20.36571466l222.85714313 0q28.38857157 0 62.6742853 14.19428529t54.65142842 34.55999999l383.04000001 382.49142843q19.81714313 20.9142853 19.81714314 48.75428532zM1060.74751475 580.57142843q0 28.38857157-19.81714313 48.2057147l-263.04 263.58857157q-20.9142853 19.81714313-48.75428531 19.81714312-19.26857155 0-31.61142843-7.47428531t-28.38857159-24.13714314l251.79428534-251.7942853q19.81714313-19.81714313 19.81714308-48.20571469 0-27.84000002-19.81714308-48.75428531l-383.04000001-382.49142845q-20.36571468-20.36571468-54.65142842-34.55999999t-62.67428532-14.19428534l120 0q28.38857157 0 62.67428532 14.19428534t54.65142842 34.55999999l383.03999998 382.49142845q19.81714313 20.9142853 19.81714314 48.75428531z" fill="currentColor"></path>
 </svg>
-        3
+        4
       </div>
     </div>
   </div>
@@ -306,7 +340,7 @@
   </div>
   <div class="widget-body">
     <div class="tags-cloud">
-      <a href="/tags/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/" style="font-size: 15px;" class="tags-cloud-5">函数使用</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8/" style="font-size: 20px;" class="tags-cloud-10">博客入门</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;" class="tags-cloud-0">学习笔记</a>
+      <a href="/tags/%E5%87%BD%E6%95%B0%E4%BD%BF%E7%94%A8/" style="font-size: 15px;" class="tags-cloud-5">函数使用</a> <a href="/tags/%E5%8A%A8%E7%89%A9%E5%9B%AD/" style="font-size: 10px;" class="tags-cloud-0">动物园</a> <a href="/tags/%E5%8D%9A%E5%AE%A2%E5%85%A5%E9%97%A8/" style="font-size: 20px;" class="tags-cloud-10">博客入门</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 10px;" class="tags-cloud-0">学习笔记</a>
     </div>
   </div>
 </section>
@@ -320,6 +354,13 @@
     
     <div class="social-icons">
       
+        
+          <a href="https://www.instagram.com/ranwhole/" class="soft-size--primary soft-style--box" target="_blank" rel="noopener noreferrer">
+            <svg class="icon icon-ins" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <path d="M512 0C372.906667 0 355.541333 0.64 300.928 3.072 246.4 5.632 209.28 14.208 176.64 26.88c-33.664 13.056-62.250667 30.592-90.709333 59.050667S39.893333 142.933333 26.88 176.64C14.208 209.28 5.589333 246.4 3.072 300.928 0.512 355.541333 0 372.906667 0 512s0.64 156.458667 3.072 211.072c2.56 54.485333 11.136 91.648 23.808 124.288a251.093333 251.093333 0 0 0 59.050667 90.709333A250.368 250.368 0 0 0 176.64 997.12c32.682667 12.629333 69.802667 21.290667 124.288 23.808C355.541333 1023.488 372.906667 1024 512 1024s156.458667-0.64 211.072-3.072c54.485333-2.56 91.648-11.178667 124.288-23.808a251.648 251.648 0 0 0 90.709333-59.050667 250.026667 250.026667 0 0 0 59.050667-90.709333c12.629333-32.64 21.290667-69.802667 23.808-124.288 2.56-54.613333 3.072-71.978667 3.072-211.072s-0.64-156.458667-3.072-211.072c-2.56-54.485333-11.178667-91.690667-23.808-124.288a251.306667 251.306667 0 0 0-59.050667-90.709333A249.472 249.472 0 0 0 847.36 26.88c-32.64-12.672-69.802667-21.290667-124.288-23.808C668.458667 0.512 651.093333 0 512 0z m0 92.16c136.661333 0 152.96 0.682667 206.933333 3.029333 49.92 2.346667 77.013333 10.624 95.018667 17.706667 23.978667 9.258667 40.96 20.352 58.965333 38.229333 17.877333 17.92 28.970667 34.944 38.229334 58.922667 6.997333 18.005333 15.36 45.098667 17.621333 95.018667 2.432 54.016 2.986667 70.229333 2.986667 206.933333s-0.64 152.96-3.157334 206.933333c-2.602667 49.92-10.922667 77.013333-17.962666 95.018667a162.56 162.56 0 0 1-38.357334 58.965333 159.744 159.744 0 0 1-58.88 38.229334c-17.92 6.997333-45.44 15.36-95.36 17.621333-54.357333 2.432-70.357333 2.986667-207.317333 2.986667-137.002667 0-153.002667-0.64-207.317333-3.157334-49.962667-2.602667-77.482667-10.922667-95.402667-17.962666a158.549333 158.549333 0 0 1-58.837333-38.357334 155.477333 155.477333 0 0 1-38.4-58.88c-7.04-17.92-15.317333-45.44-17.92-95.36-1.92-53.76-2.602667-70.357333-2.602667-206.677333 0-136.362667 0.682667-153.002667 2.602667-207.402667 2.602667-49.92 10.88-77.397333 17.92-95.317333 8.96-24.32 20.437333-40.96 38.4-58.922667 17.877333-17.877333 34.56-29.397333 58.837333-38.314666 17.92-7.082667 44.842667-15.402667 94.762667-17.962667 54.4-1.92 70.4-2.56 207.317333-2.56l1.92 1.28z m0 156.928a262.912 262.912 0 1 0 0 525.824 262.912 262.912 0 1 0 0-525.824zM512 682.666667c-94.293333 0-170.666667-76.373333-170.666667-170.666667s76.373333-170.666667 170.666667-170.666667 170.666667 76.373333 170.666667 170.666667-76.373333 170.666667-170.666667 170.666667z m334.762667-443.946667a61.482667 61.482667 0 0 1-122.88 0 61.44 61.44 0 0 1 122.88 0z"></path>
+</svg>
+
+          </a>
         
       
         
