@@ -106,7 +106,7 @@
           
             <h2 class="last-time">
               <span>最后更新于</span>
-              <time  class="article-updated" datetime="2025-03-23T01:12:49.368Z" itemprop="dateUpdated">2025-03-22</time>
+              <time  class="article-updated" datetime="2025-03-28T23:03:48.336Z" itemprop="dateUpdated">2025-03-28</time>
             </h2>
           
           
@@ -139,9 +139,19 @@
       
       
       <section class="article-entry markdown-body layout-margin content-padding--large soft-size--large soft-style--box">
-        <h1 id="这里主要是放一些平常学习中感觉值得记下来的知识点"><a href="#这里主要是放一些平常学习中感觉值得记下来的知识点" class="headerlink" title="这里主要是放一些平常学习中感觉值得记下来的知识点"></a>这里主要是放一些平常学习中感觉值得记下来的知识点</h1><h1 id="一-：-isdigit-遇到的问题"><a href="#一-：-isdigit-遇到的问题" class="headerlink" title="一 ： isdigit()遇到的问题"></a>一 ： isdigit()遇到的问题</h1><p>在python中，isdigit()这个函数是用于检查一个字符串是不是整数，但当遇到例如 <strong>-10</strong>, <strong>12.5</strong>这样的数字就没办法检测了（python中不知道为什么没有检查小数的函数），所以我们需要自己定义一个函数，功能是检查字符串中是不是<strong>数字</strong>（包含整数，负数，小数），代码如下：</p>
+        <h1 id="这里主要是放一些平常学习中感觉值得记下来的知识点"><a href="#这里主要是放一些平常学习中感觉值得记下来的知识点" class="headerlink" title="这里主要是放一些平常学习中感觉值得记下来的知识点"></a>这里主要是放一些平常学习中感觉值得记下来的知识点</h1><h1 id="一-：isdigit-遇到的问题"><a href="#一-：isdigit-遇到的问题" class="headerlink" title="一 ：isdigit()遇到的问题"></a>一 ：isdigit()遇到的问题</h1><p>在python中，isdigit()这个函数是用于检查一个字符串是不是整数，但当遇到例如 <strong>-10</strong>, <strong>12.5</strong>这样的数字就没办法检测了（python中不知道为什么没有检查小数的函数），所以我们需要自己定义一个函数，功能是检查字符串中是不是<strong>数字</strong>（包含整数，负数，小数），代码如下：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def digital(a:str) -&gt; bool:</span><br><span class="line">    pattern = re.compile(&quot;-?\d+(\.\d+)?$&quot;)</span><br><span class="line">    return bool(pattern.match(a))</span><br></pre></td></tr></table></figure>
 <p>这是使用正则表达式(regex)的办法来推断（可能也得开一章写一下正则表达式），如果为数字则输出True，否则为False</p>
+<h1 id="二-：字典遇到的问题"><a href="#二-：字典遇到的问题" class="headerlink" title="二 ：字典遇到的问题"></a>二 ：字典遇到的问题</h1><p><img src="/image/lab_note/lab9.png"></p>
+<p>遇到的问题如上，这是一个更新字典内容的练习题，本题是定义一个函数return_subject_grade将subject_grade这个字典中subject这个key值改为new_grade。</p>
+<p>问题在于第二段话 <em>This function creates a copy of the original dictionary subject_grade….</em> 如何去复制一个字典是我一开始疏漏的点，以我一开始的思维来说，创建一个副本，只需要将subject_grade的值附到副本上去即可，即</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tem_subject_grade = subject_grade</span><br></pre></td></tr></table></figure>
+<p>但是事实并非是这样，事实上，tem_subject_grade依旧指向subject_grade，如果你修改tem_subject_grade的值，subject_grade的值会被一同修改，这一点查看内存id也可以发现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a = &#123;90: [&#x27;Math&#x27;], 75: [&#x27;English&#x27;], 95: [&#x27;Python&#x27;], 88: [&#x27;Biology&#x27;]&#125;</span><br><span class="line">b = a</span><br><span class="line">print(id(a)) # 查看内存位置</span><br><span class="line">print(id(b))</span><br><span class="line"></span><br><span class="line">#输出</span><br><span class="line">2737371232704</span><br><span class="line">2737371232704 #内存id相同</span><br></pre></td></tr></table></figure>
+
+<p>因此真正的创建副本的办法是使用python字典的内置方法copy()，当你需要创建一个副本，只需要使用这个关键字，就可以在不会修改原字典的情况下，而是创建副本对副本进行修改。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tem_subject_grade = subject_grade.copy()</span><br></pre></td></tr></table></figure>
+
 
       </section>
 
