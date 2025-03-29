@@ -56,5 +56,32 @@ if "%pwd%" == "123" (
 [下载示例](/download/bat/if_pwd.bat)
 
 ## goto 
+对于这个命令只有一个功能就是
+```
+goto [Lable]
+```
+Lable 是Batch中的目标标签，标签必须单独一行且以冒号打头，例如
+```
+@echo off
+chcp 65001>nul & :: 强制命令指示符使用utf-8编码，不然中文会乱码
 
+:MENU
+REM 这是主菜单
+goto START
+REM 跳转到START标签下，执行其标签下的代码
+
+:START
+echo 到达START标签
+
+pause
+```
+[下载实例](/download/bat/goto.bat)
+
+## call
+
+## choice
+
+## for
+
+## set
 
