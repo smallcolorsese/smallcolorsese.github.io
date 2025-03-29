@@ -14,13 +14,15 @@ echo " ##     ## ##     ##  #######  ##     ## ##     ## ##    ## ";
 echo =========================
 echo 将代码上传到git仓库请按1
 echo 将git仓库远程同步到本地请按2
-echo 直接退出请按3
+echo 将博客部署到服务器请按3
+echo 直接退出请按4
 echo =========================
 
-choice /c 123 /n /m "请输入选项"
+choice /c 1234 /n /m "请输入选项"
 
 
-if "%errorlevel%" == "3" goto END
+if "%errorlevel%" == "4" goto END
+if "%errorlevel%" == "3" call :HEXO
 if "%errorlevel%" == "2" call :PULL
 if "%errorlevel%" == "1" call :UPDATE
 
@@ -39,6 +41,10 @@ git pull
 echo 拉取完成！
 
 goto MENU
+
+:HEXO
+start cmd /c "hexo g && hexo d && timeout /t 2 >nul"
+echo 部署完毕
 
 :END
 timeout /t 1 >nul
