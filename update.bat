@@ -44,7 +44,10 @@ goto MENU
 
 :HEXO
 start cmd /c "hexo g && hexo d && timeout /t 2 >nul"
+timeout /t 6 >nul
 echo 部署完毕
+
+goto MENU
 
 :END
 timeout /t 1 >nul
