@@ -28,8 +28,10 @@ if "%errorlevel%" == "1" call :UPDATE
 
 :UPDATE
 echo 开始上传代码
+set /p comment="请输入commit信息(默认为new): "
+if "%comment%"=="" set comment=new
 git add .
-git commit -m "new"
+git commit -m "%comment%"
 git push
 echo 上传完毕
 
