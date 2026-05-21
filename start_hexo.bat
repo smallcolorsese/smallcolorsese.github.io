@@ -15,7 +15,10 @@ timeout /t 1 >nul
 echo 正在启动请稍后
 timeout /t 1 >nula
 
-echo 正在加载
+echo 正在清理旧文件
+call hexo clean >nul
+timeout /t 1 >nul
+echo 正在加载并生成 search.json
 call hexo g >nul
 timeout /t 1 >nul
 echo 加载完成

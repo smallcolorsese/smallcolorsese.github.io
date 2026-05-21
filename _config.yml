@@ -107,6 +107,13 @@ hexo-browsersync:
 ## Themes: https://hexo.io/themes/
 theme: flexblock
 
+# Search Database
+search:
+  path: search.json
+  field: post,page
+  content: true
+  template: ./search.xml
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
